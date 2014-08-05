@@ -1,7 +1,6 @@
-require "hoge/version"
-
-module Hoge
-  def self.cipher(word)
+# encoding: utf-8
+class MyCipher
+  def cipher(word)
     a = word.length
     word_a = ''
     (0...a).each { |i|
@@ -9,10 +8,10 @@ module Hoge
       word_b += 1
       word_a += word_b.chr
     }
-    word_a
+    p word_a
   end
 
-  def self.decoding(word)
+  def decoding(word)
     a = word.length
     word_a = ''
     (0...a).each { |i|
@@ -20,6 +19,12 @@ module Hoge
       word_b -= 1
       word_a += word_b.chr
     }
-    word_a
+    p word_a
   end
 end
+
+
+hel = MyCipher.new
+
+hel.cipher('abcde')
+hel.decoding('bcdef')
